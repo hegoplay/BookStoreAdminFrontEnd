@@ -62,7 +62,7 @@ public class ViewController {
 		modelAndView.setViewName("login");
 		return modelAndView;
 	}
-
+// Save to commit
 	@GetMapping("/dashboard")
 	public String dashboard(HttpSession session, Model model) {
 		String jwt = (String) session.getAttribute("jwt");
