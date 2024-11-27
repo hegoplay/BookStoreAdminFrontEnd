@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Trang chính</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/color.css" />
+  </head>
+  <body>
+    <!-- Navigation ngang với logo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#" th:href="/login">Bookstore</a>
+
+        <!-- Menu navigation -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="/templates/static/dashboard.html"
+                >Trang Chủ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="/templates/static/categoryManagement.html"
+                >The loai</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dịch Vụ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Liên Hệ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class=" container-lg  mt-5">
+        <h2 class="mb-4">Thêm Thể loại</h2>
+        <div th:if="${errorMessage != null}" class="alert alert-danger" role="alert">
+            <span th:text="${errorMessage}">fadfkajlfajs</span>
+          </div>
+        <form>
+          <!-- Tên Category -->
+          <div class="mb-3">
+            <label for="categoryName" class="form-label">Tên Category</label>
+            <input
+              type="text"
+              class="form-control"
+              id="categoryName"
+              placeholder="Nhập tên Category"
+              required
+            />
+          </div>
+  
+          <!-- Slug -->
+          <div class="mb-3">
+            <label for="slug" class="form-label">Slug</label>
+            <input
+              type="text"
+              class="form-control"
+              id="slug"
+              placeholder="Nhập slug"
+              required
+            />
+          </div>
+  
+          <!-- Description -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Mô tả</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="4"
+              placeholder="Nhập mô tả"
+            ></textarea>
+          </div>
+  
+          <!-- Submit Button -->
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Lưu</button>
+          </div>
+        </form>
+      </div>
+    <!-- Thêm liên kết tới Bootstrap JS -->
+    <script src="/static/js/boostrap.min.js"></script>
+  </body>
+</html>

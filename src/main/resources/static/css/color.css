@@ -1,3 +1,9 @@
-.bg-primary{
-    background-color: aquamarine !important;
+.bg-primary {
+	background-color: aquamarine !important;
+}
+
+.nav-item .nav-link.active {
+	background-color: #ffffff; /* Change background color */
+	color: #000000 !important; /* Change text color */
+	border-radius: 5px; /* Optional: Add rounded corners */
 }
